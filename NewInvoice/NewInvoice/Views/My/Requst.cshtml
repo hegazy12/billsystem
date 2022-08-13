@@ -1,0 +1,50 @@
+﻿@model IEnumerable<NewInvoice.Models.approver>
+
+@{
+    ViewBag.Title = "Requst";
+}
+
+<h2>Requst</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.decision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.invoice_key)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_key)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.decision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.invoice_key)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_key)
+        </td>
+        <td>
+            @{
+                
+                            <a href="~/my/accept/@item.id"><input type="button" value="accept" /> </a>
+                            <a href="~/my/reject/@item.id"><input type="button" value="reject" /> </a>
+                        
+           }
+                
+            
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NewInvoice.Models.invoice>
+
+@{
+    ViewBag.Title = "addmangertobill";
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            add
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @{
+                    <form method="post" action="/bill/addmangertobill?numbill=@item.invoicenumber">
+                        <select name="app">
+                            @foreach (var i in ViewBag.addbill)
+                            {
+                                <option value="@i.id">@i.name</option>
+                            }
+                        </select>
+                        <input type="submit" value="send" />
+                    </form>
+                }
+            </td>
+        </tr>
+    }
+</table>
