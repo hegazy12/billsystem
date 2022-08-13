@@ -20,7 +20,19 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @{if (Session["username"] != "null")
+                        {
+                            <li>@Html.ActionLink("add invoice", "addbill", "bill")</li>
+                            <li>@Html.ActionLink("add manger", "addmangertobill", "bill")</li>
+                            <li>@Html.ActionLink("requst", "requst", "my")</li>
+                            <li>@Html.ActionLink("logout", "logout", "user")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("signup", "signup", "user")</li>
+
+                        }
+                    }
                 </ul>
             </div>
         </div>

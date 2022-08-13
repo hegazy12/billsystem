@@ -38,7 +38,7 @@ namespace sara_system.Controllers
             Session["username"] = user.email;
             Session["id"] = user.id;
 
-            return View();
+            return RedirectToAction("addbill","bill");
         }
 
 
@@ -63,6 +63,13 @@ namespace sara_system.Controllers
             db.users.Add(user);
             db.SaveChangesAsync();
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult logout()
+        {
+            Session["username"] = "null";
+            return RedirectToAction("login");
         }
     }
 }

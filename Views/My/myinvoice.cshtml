@@ -1,0 +1,18 @@
+﻿@model List<sara_system.Models.invoice>
+
+@{
+    ViewBag.Title = "myinvoice";
+}
+
+@{       
+    <div class="row" >
+    @foreach (var item in Model){
+        <div class="col-sm-4" >
+             <h4>@item.invoicenumber </h4>
+             <h4>@item.value</h4>
+             <h4>@item.description</h4>
+             <h4>@item.state</h4>
+        </div>
+      }
+    </div>
+}

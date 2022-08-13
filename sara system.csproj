@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\billController.cs" />
+    <Compile Include="Controllers\MyController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -164,6 +165,34 @@
     <Compile Include="Migrations\202208102201561_kkki.cs" />
     <Compile Include="Migrations\202208102201561_kkki.designer.cs">
       <DependentUpon>202208102201561_kkki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208131134480_hhsl.cs" />
+    <Compile Include="Migrations\202208131134480_hhsl.designer.cs">
+      <DependentUpon>202208131134480_hhsl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208131140515_fffd.cs" />
+    <Compile Include="Migrations\202208131140515_fffd.designer.cs">
+      <DependentUpon>202208131140515_fffd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208131150575_ffff.cs" />
+    <Compile Include="Migrations\202208131150575_ffff.designer.cs">
+      <DependentUpon>202208131150575_ffff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208131227114_hhass.cs" />
+    <Compile Include="Migrations\202208131227114_hhass.designer.cs">
+      <DependentUpon>202208131227114_hhass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208131257522_ggd.cs" />
+    <Compile Include="Migrations\202208131257522_ggd.designer.cs">
+      <DependentUpon>202208131257522_ggd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208131346303_fffl.cs" />
+    <Compile Include="Migrations\202208131346303_fffl.designer.cs">
+      <DependentUpon>202208131346303_fffl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208131431433_ddwcwc.cs" />
+    <Compile Include="Migrations\202208131431433_ddwcwc.designer.cs">
+      <DependentUpon>202208131431433_ddwcwc.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbCon.cs" />
@@ -210,6 +239,8 @@
     <Content Include="Views\User\login.cshtml" />
     <Content Include="Views\bill\Addbill.cshtml" />
     <Content Include="Views\bill\addmangertobill.cshtml" />
+    <Content Include="Views\My\Requst.cshtml" />
+    <Content Include="Views\My\myinvoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -242,6 +273,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208102201561_kkki.resx">
       <DependentUpon>202208102201561_kkki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131134480_hhsl.resx">
+      <DependentUpon>202208131134480_hhsl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131140515_fffd.resx">
+      <DependentUpon>202208131140515_fffd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131150575_ffff.resx">
+      <DependentUpon>202208131150575_ffff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131227114_hhass.resx">
+      <DependentUpon>202208131227114_hhass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131257522_ggd.resx">
+      <DependentUpon>202208131257522_ggd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131346303_fffl.resx">
+      <DependentUpon>202208131346303_fffl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131431433_ddwcwc.resx">
+      <DependentUpon>202208131431433_ddwcwc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

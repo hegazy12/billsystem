@@ -14,9 +14,7 @@ namespace sara_system.Models
         public DbSet<vendor> vendors { get; set; }
         public DbSet<project> projects { get; set; }
         public DbSet<purchaseorder> purchaseorders { get; set;}
-        public DbSet<doc> docs { get; set; }
-        public DbSet<state> states { get; set; }
-
+        public DbSet<doc> docs { get; set; } 
         public DbSet<invoice> invoices { get; set;}
         public DbSet<approver> approvers { get; set; }
 
@@ -28,7 +26,7 @@ namespace sara_system.Models
         public string name { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public List<approver> approvers { get; set; }
+        public virtual List<invoice> Invoices{get; set;}
     }
 
     public class currencies
@@ -36,14 +34,14 @@ namespace sara_system.Models
         [Key]
         public string symbol { get; set; }
         public string name { get; set; }
-        public List<invoice> invoices { get; set; }
+        public virtual List<invoice> invoices { get; set; }
     }
     public class vendor
     {
             [Key]
             public int vendornumber { get; set; }
             public string name { get; set; }
-            public List<invoice> invoices { get; set; }
+            public virtual List<invoice> invoices { get; set; }
     }
 
     public class project
@@ -51,7 +49,7 @@ namespace sara_system.Models
             [Key]
             public string projectnumber { get; set; }
             public string projectname { get; set; }
-            public user projectmang { get; set; }
+            public virtual user projectmang { get; set; }
             
     }
 
@@ -67,15 +65,10 @@ namespace sara_system.Models
     {
         public int id { get; set; }
         public string path { get; set; }
-        public invoice invoice { get; set; }
+        public virtual invoice invoice { get; set; }
     }
 
-    public class state
-    {
-        public int id { get; set; }
-        public string statename { get; set; }
-        public List<invoice> invoices { get; set; }
-    }
+
 
     public class invoice{
         [Key]
@@ -84,22 +77,30 @@ namespace sara_system.Models
 
         public string description { get; set; }
 
-        public user creator { get; set; }
-        public List<doc> docs { get; set; }
-        public currencies currency { get; set; }
-        public vendor vendor { get; set; }
-        public project projectnumber { get; set; }
-        public purchaseorder purchaseorder { get; set; }
+        public string state { get; set;}
+
+        public int creator_key { get; set; }
+        public virtual user creator { get; set;}
+        
+        
+        public virtual List<doc> docs { get; set; }
+        public virtual currencies currency { get; set; }
+        public virtual vendor vendor { get; set; }
+        public virtual project projectnumber { get; set; }
+        public virtual purchaseorder purchaseorder { get; set; }
+        public virtual List<approver> Approver { get; set;}
        
     }
 
     public class approver
     {
-        public int id { get; set; }
+        public int id {get; set;}
+        public string decision { get; set;}
+                
+        public virtual invoice invoice { get; set; }
+        public string invoice_key { get; set;}
         
-        public string invoice { get ; set; }
-        
-        
-        public int user { get; set; }
+        public virtual user user { get; set; }
+        public int user_key { get; set; }
     }
 }

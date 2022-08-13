@@ -1,0 +1,21 @@
+﻿@model IList<sara_system.Models.approver>
+
+@{
+    ViewBag.Title = "Requst";
+}
+
+@{ 
+    <div class="row">
+    @foreach(var item in Model)
+     {
+        <div class="col-sm-4">
+            <h4>@item.invoice.invoicenumber</h4>
+            <h4>@item.invoice.value</h4>
+            <h4>@item.invoice.description</h4>
+            <h4>@item.decision</h4>
+            <a href="~/my/accept/@item.id"><input type="button" value="accept" /> </a>
+            <a href="~/my/reject/@item.id"><input type="button" value="reject" /> </a>
+        </div>
+     }
+    </div>
+}
