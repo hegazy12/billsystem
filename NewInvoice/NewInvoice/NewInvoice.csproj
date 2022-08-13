@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202208131555272_sa.designer.cs">
       <DependentUpon>202208131555272_sa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208132245425_ggk.cs" />
+    <Compile Include="Migrations\202208132245425_ggk.designer.cs">
+      <DependentUpon>202208132245425_ggk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbCon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,6 +214,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202208131555272_sa.resx">
       <DependentUpon>202208131555272_sa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208132245425_ggk.resx">
+      <DependentUpon>202208132245425_ggk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

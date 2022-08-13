@@ -22,7 +22,6 @@ namespace NewInvoice.Controllers
         public ActionResult Vendor(vendor vendor)
         {
             DbCon db = mystring.GitDB();
-
             db.vendors.Add(vendor);
             db.SaveChanges();
             return View("Vendor");

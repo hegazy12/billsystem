@@ -30,6 +30,7 @@ namespace NewInvoice.Controllers
             addbill addbill = new addbill();
             addbill.users = db.users.ToList();
             ViewBag.addbill = addbill;
+            ViewBag.currencies = db.currencies.ToList();
             return View();
         }
 
@@ -45,10 +46,12 @@ namespace NewInvoice.Controllers
             invoice.description = form["description"].ToString();
 
             int x = Convert.ToInt32(Session["id"]);
+            string currencies = form["currencies"].ToString();
 
             invoice.creator = db.users.Find(x);
             invoice.creator_key = x;
-
+            invoice.delete_state = 0;
+            invoice.currency = db.currencies.Find(currencies);
             invoice.state = "pend";
 
             db.invoices.Add(invoice);
@@ -67,7 +70,7 @@ namespace NewInvoice.Controllers
             DbCon db = mystring.GitDB();
             ViewBag.addbill = db.users.ToList();
             int x = Convert.ToInt32(Session["id"]);
-            return View(db.invoices.Where(m=>m.creator_key==x).ToList());
+            return View(db.invoices.Where(m=>m.creator_key==x && m.delete_state == 0).ToList());
         }
 
 
@@ -94,6 +97,17 @@ namespace NewInvoice.Controllers
 
             db.approvers.Add(approver);
             db.SaveChanges();
+            return RedirectToAction("addmangertobill");
+        }
+
+        public ActionResult done(string numbill)
+        {
+            DbCon db = mystring.GitDB();
+            invoice invoice = db.invoices.Find(numbill);
+
+            invoice.delete_state = 1;
+            db.SaveChanges();
+
             return RedirectToAction("addmangertobill");
         }
 
