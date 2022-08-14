@@ -13,7 +13,7 @@ namespace NewInvoice.Controllers
     public class CurrencyController : Controller
     {
         // GET: Curency
-        DbSinglton mystring = new DbSinglton();
+        DbSinglton myconnection = new DbSinglton();
         
 
         [HttpGet]
@@ -25,7 +25,7 @@ namespace NewInvoice.Controllers
         [HttpPost]
         public ActionResult Currency(currencies currency)
         {
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             db.currencies.Add(currency);
             db.SaveChanges();
             UserController userController = new UserController();
@@ -33,7 +33,7 @@ namespace NewInvoice.Controllers
         }
         public ActionResult GetAllCurrencies()
         {
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             List<currencies> currencies = db.currencies.ToList();
             return View(currencies);
         }

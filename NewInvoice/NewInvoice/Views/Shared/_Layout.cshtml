@@ -22,10 +22,16 @@
                 <ul class="nav navbar-nav">
                     @{if (Session["username"] != "null")
                         {
-                            <li>@Html.ActionLink("add invoice", "addbill", "bill")</li>
-                            <li>@Html.ActionLink("add manger", "addmangertobill", "bill")</li>
-                            <li>@Html.ActionLink("requst", "requst", "my")</li>
-                            <li>@Html.ActionLink("myincoices", "myinvoice", "my")</li>
+                            <li>@Html.ActionLink("Add invoice", "addbill", "bill")</li>
+                            <li>@Html.ActionLink("Add manger", "addmangertobill", "bill")</li>
+                            <li>@Html.ActionLink("Requsts", "requst", "my")</li>
+                            <li>@Html.ActionLink("Myincoices", "myinvoice", "my")</li>
+                            <li>@Html.ActionLink("Add Currency", "Currency", "Currency")</li>
+                            <li>@Html.ActionLink("Add Order", "PurchaseOrder", "PurchaseOrder")</li>
+                            <li>@Html.ActionLink("Add Vendor", "Vendor", "Vendor")</li>
+                            <li>@Html.ActionLink("Add Project", "Project", "Project")</li>
+
+
                             <li>@Html.ActionLink("logout", "logout", "user")</li>
                         }
                         else

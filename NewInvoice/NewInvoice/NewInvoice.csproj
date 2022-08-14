@@ -128,8 +128,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\billController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\CurrencyController.cs" />
     <Compile Include="Controllers\MyController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\PurchaseOrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="Global.asax.cs">
@@ -139,9 +142,13 @@
     <Compile Include="Migrations\202208131555272_sa.designer.cs">
       <DependentUpon>202208131555272_sa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202208132245425_ggk.cs" />
-    <Compile Include="Migrations\202208132245425_ggk.designer.cs">
-      <DependentUpon>202208132245425_ggk.cs</DependentUpon>
+    <Compile Include="Migrations\202208132253550_dfdfgf.cs" />
+    <Compile Include="Migrations\202208132253550_dfdfgf.designer.cs">
+      <DependentUpon>202208132253550_dfdfgf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208140759241_dgfgfd.cs" />
+    <Compile Include="Migrations\202208140759241_dgfgfd.designer.cs">
+      <DependentUpon>202208140759241_dgfgfd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbCon.cs" />
@@ -193,10 +200,16 @@
     <Content Include="Views\My\Requst.cshtml" />
     <Content Include="Views\Currency\GetAllCurrencies.cshtml" />
     <Content Include="Views\Currency\Currency.cshtml" />
+    <Content Include="Views\PurchaseOrder\PurchaseOrder.cshtml" />
+    <Content Include="Views\PurchaseOrder\GetAllPurchaseOrders.cshtml" />
+    <Content Include="Views\Vendor\Vendor.cshtml" />
+    <Content Include="Views\Vendor\GetAllVendors.cshtml" />
+    <Content Include="Views\Project\Project.cshtml" />
+    <Content Include="Views\Project\GetAllProjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Vendor\" />
+    <Folder Include="Views\Comment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -215,8 +228,11 @@
     <EmbeddedResource Include="Migrations\202208131555272_sa.resx">
       <DependentUpon>202208131555272_sa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208132245425_ggk.resx">
-      <DependentUpon>202208132245425_ggk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208132253550_dfdfgf.resx">
+      <DependentUpon>202208132253550_dfdfgf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208140759241_dgfgfd.resx">
+      <DependentUpon>202208140759241_dgfgfd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

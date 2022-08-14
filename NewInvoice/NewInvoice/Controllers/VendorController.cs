@@ -11,7 +11,7 @@ namespace NewInvoice.Controllers
     public class VendorController : Controller
     {
         // GET: Vendor
-        DbSinglton mystring = new DbSinglton();
+        DbSinglton myconnection = new DbSinglton();
         [HttpGet]
         public ActionResult Vendor()
         {
@@ -21,14 +21,15 @@ namespace NewInvoice.Controllers
         [HttpPost]
         public ActionResult Vendor(vendor vendor)
         {
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
+
             db.vendors.Add(vendor);
             db.SaveChanges();
             return View("Vendor");
         }
         public ActionResult GetAllVendors()
         {
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             List<vendor> vendors = db.vendors.ToList();
             return View(vendors);
         }

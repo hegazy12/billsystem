@@ -4,18 +4,29 @@
 
 <form method="post">
     <label>Invoicenumber</label>  <input type="text" name="invoicenumber" />
-    <br />                         
+    <br />
     <label>Value</label>          <input type="number" name="value" />
-    <br />                         
+    <br />
     <label>Description</label>    <input type="text" name="Description" />
-    <br />                         
+    <br />
+    <label>Currency</label>
     <select name="currencies">
-        @{foreach(var item in ViewBag.currencies)
-          {
+        @{foreach (var item in ViewBag.currencies)
+            {
                 <option value="@item.symbol">@item.symbol (@item.name)</option>
-          }
-          }
+            }
+        }
     </select>
+    <br />
+    <label>Vendor</label>
+    <select name="Vendors">
+        @{foreach (var item in ViewBag.vendors)
+            {
+                <option value="@item.name"> (@item.name)</option>
+            }
+        }
+    </select>
+    <br />
+
     <input type="submit" value="send" />
 </form>
-<h1>@Session["id"]</h1>

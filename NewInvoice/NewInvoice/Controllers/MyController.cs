@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NewInvoice.Controllers;
 
 namespace NewInvoice.Controllers
 {
     public class MyController : Controller
     {
-        DbSinglton mystring = new DbSinglton();
+        DbSinglton myconnection = new DbSinglton();
 
         public ActionResult Requst()
         {
@@ -18,10 +19,10 @@ namespace NewInvoice.Controllers
             {
                 return RedirectToAction("login", "user");
             }
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             List<approver> approvers = new List<approver>();
             int x = Convert.ToInt32(Session["id"]);
-            approvers = db.approvers.Where(m => m.user_key == x).ToList();
+            approvers = db.approvers.Where(m => m.user_key == x && m.decision== "pend" && m.invoice.state != "reject").ToList();
             return View(approvers);
         }
 
@@ -29,9 +30,10 @@ namespace NewInvoice.Controllers
         public ActionResult accept(int? id)
         {
             
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             approver approver = db.approvers.Find(id);
             approver.decision = "accept";
+            
             db.SaveChanges();
             return RedirectToAction("Requst");
         }
@@ -39,9 +41,10 @@ namespace NewInvoice.Controllers
         [HttpGet]
         public ActionResult reject(int? id)
         {
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             approver approver = db.approvers.Find(id);
             approver.decision = "reject";
+            approver.invoice.state = "reject";
             db.SaveChanges();
             return RedirectToAction("Requst");
         }
@@ -53,7 +56,7 @@ namespace NewInvoice.Controllers
             {
                 return RedirectToAction("login", "user");
             }
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             int x = Convert.ToInt32(Session["id"]);
 
 

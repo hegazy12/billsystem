@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NewInvoice.Models.project>
+
+@{
+    ViewBag.Title = "GetAllProjects";
+}
+
+<h2>GetAllProjects</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.projectnumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.projectname)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.projectnumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.projectname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.projectnumber }) |
+            @Html.ActionLink("Details", "Details", new { id = item.projectnumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.projectnumber })
+        </td>
+    </tr>
+}
+
+</table>

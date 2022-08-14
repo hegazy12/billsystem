@@ -79,6 +79,8 @@ C:\Users\DELL\source\repos\NewInvoice\NewInvoice\bin\EntityFramework.xml
 C:\Users\DELL\source\repos\NewInvoice\NewInvoice\bin\EntityFramework.SqlServer.xml
 C:\Users\DELL\source\repos\NewInvoice\NewInvoice\obj\Debug\NewInvoice.Migrations.sa.resources
 C:\Users\DELL\source\repos\NewInvoice\NewInvoice\obj\Debug\NewInvoice.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\NewInvoice\NewInvoice\obj\Debug\NewInvoice.Migrations.dfdfgf.resources
+C:\Users\DELL\source\repos\NewInvoice\NewInvoice\obj\Debug\NewInvoice.Migrations.dgfgfd.resources
 C:\Users\DELL\source\repos\NewInvoice\NewInvoice\obj\Debug\NewInvoice.csprojAssemblyReference.cache
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\bin\NewInvoice.dll.config
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\bin\NewInvoice.dll
@@ -157,9 +159,10 @@ C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\bin\Antlr3.Runtime.pd
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.csproj.AssemblyReference.cache
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.Migrations.sa.resources
+C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.Migrations.dfdfgf.resources
+C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.Migrations.dgfgfd.resources
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.csproj.GenerateResource.cache
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.csproj.CoreCompileInputs.cache
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.csproj.CopyComplete
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.dll
 C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.pdb
-C:\Users\abdo\Desktop\New folder (5)\NewInvoice\NewInvoice\obj\Debug\NewInvoice.Migrations.ggk.resources

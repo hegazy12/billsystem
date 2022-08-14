@@ -11,12 +11,9 @@ namespace NewInvoice.Controllers
 {
     public class billController : Controller
     {
-        DbSinglton mystring = new DbSinglton();
+        DbSinglton myconnection = new DbSinglton();
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+        
 
         [HttpGet]
         public ActionResult Addbill()
@@ -26,18 +23,21 @@ namespace NewInvoice.Controllers
                 return RedirectToAction("login", "user");
             }
 
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             addbill addbill = new addbill();
             addbill.users = db.users.ToList();
+          
             ViewBag.addbill = addbill;
             ViewBag.currencies = db.currencies.ToList();
+          
+            ViewBag.vendors = db.vendors.ToList();
             return View();
         }
 
         [HttpPost]
         public ActionResult Addbill(FormCollection form)
         {
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
 
             invoice invoice = new invoice();
 
@@ -47,17 +47,19 @@ namespace NewInvoice.Controllers
 
             int x = Convert.ToInt32(Session["id"]);
             string currencies = form["currencies"].ToString();
+            string vendors = form["vendors"].ToString();
 
             invoice.creator = db.users.Find(x);
             invoice.creator_key = x;
             invoice.delete_state = 0;
             invoice.currency = db.currencies.Find(currencies);
+            invoice.vendor = db.vendors.Where(m=>m.name == vendors).FirstOrDefault();
             invoice.state = "pend";
 
             db.invoices.Add(invoice);
             db.SaveChanges();
 
-            return View();
+            return RedirectToAction("Addbill");
         }
 
         [HttpGet]
@@ -67,10 +69,10 @@ namespace NewInvoice.Controllers
             {
                 return RedirectToAction("login", "user");
             }
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             ViewBag.addbill = db.users.ToList();
             int x = Convert.ToInt32(Session["id"]);
-            return View(db.invoices.Where(m=>m.creator_key==x && m.delete_state == 0).ToList());
+            return View(db.invoices.Where(m => m.creator_key == x && m.delete_state == 0).ToList());
         }
 
 
@@ -78,7 +80,7 @@ namespace NewInvoice.Controllers
         public ActionResult addmangertobill(string numbill, FormCollection form)
         {
 
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             int x = Convert.ToInt32(form["app"]);
 
             var apps = db.approvers.Where(m => m.invoice_key == numbill && m.user_key == x).ToList();
@@ -99,10 +101,9 @@ namespace NewInvoice.Controllers
             db.SaveChanges();
             return RedirectToAction("addmangertobill");
         }
-
         public ActionResult done(string numbill)
         {
-            DbCon db = mystring.GitDB();
+            DbCon db = myconnection.GitDB();
             invoice invoice = db.invoices.Find(numbill);
 
             invoice.delete_state = 1;

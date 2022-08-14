@@ -58,7 +58,7 @@ namespace NewInvoice.Models
     {
         [Key]
         public string ordernumber { get; set; }
-        public string created { get; set; }
+        public string date { get; set; }
 
     }
 
@@ -83,8 +83,8 @@ namespace NewInvoice.Models
 
         public int creator_key { get; set; }
         public virtual user creator { get; set; }
+        public int delete_state { get; set; }
 
-        public int delete_state {get; set;}
         public virtual List<doc> docs { get; set; }
         public virtual currencies currency { get; set; }
         public virtual vendor vendor { get; set; }
