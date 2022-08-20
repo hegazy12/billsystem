@@ -195,7 +195,6 @@
     <Content Include="Views\User\Signup.cshtml" />
     <Content Include="Views\User\login.cshtml" />
     <Content Include="Views\bill\Addbill.cshtml" />
-    <Content Include="Views\bill\addmangertobill.cshtml" />
     <Content Include="Views\My\myinvoice.cshtml" />
     <Content Include="Views\My\Requst.cshtml" />
     <Content Include="Views\Currency\GetAllCurrencies.cshtml" />
