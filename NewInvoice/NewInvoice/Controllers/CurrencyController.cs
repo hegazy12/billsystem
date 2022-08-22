@@ -12,16 +12,16 @@ namespace NewInvoice.Controllers
 {
     public class CurrencyController : Controller
     {
-        
+        // GET: Curency
         DbSinglton myconnection = new DbSinglton();
         
 
         [HttpGet]
         public ActionResult Currency()
+            
         {
             return View();
         }
-
         [HttpPost]
         public ActionResult Currency(currencies currency)
         {
@@ -37,5 +37,6 @@ namespace NewInvoice.Controllers
             List<currencies> currencies = db.currencies.ToList();
             return View(currencies);
         }
+        
     }
 }

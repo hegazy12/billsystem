@@ -16,6 +16,7 @@ namespace NewInvoice.Controllers
         public ActionResult Project()
         {
             DbCon db = myconnection.GitDB();
+
             ViewBag.users = db.users.ToList();
 
             return View("Project");
@@ -25,12 +26,11 @@ namespace NewInvoice.Controllers
         public ActionResult Project(project project, FormCollection form)
         {
             DbCon db = myconnection.GitDB();
-            user users = new user();
-            string user = form["user"].ToString();
-            project.projectmang = db.users.Find();
+            string users = form["user"].ToString();
+            project.projectmang = db.users.Where(m => m.name == users).FirstOrDefault();
             db.projects.Add(project);
             db.SaveChanges();
-            return RedirectToAction("GetAllProjects");
+            return RedirectToAction("Project");
 
         }
         [HttpGet]

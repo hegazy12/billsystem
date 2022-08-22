@@ -1,0 +1,35 @@
+﻿@model NewInvoice.Models.invoice
+
+<div class="row">
+    <div class="col-sm-6">
+        <h3>(invoicenumber) @Model.invoicenumber</h3>
+        <h3>(value) @Model.value</h3>
+        <h3>(vendor name) @Model.vendor.name</h3>
+        <h3>(creator name) @Model.creator.name</h3>
+    </div>
+    
+    <div class="col-sm-6">
+        @{foreach (var item in Model.docs) {
+            <object data="your_url_to_pdf" type="application/pdf">
+                 <iframe src="@Url.Action("OpenPDF", new { id =item.id})" width="400">
+                 </iframe>
+            </object>}
+
+
+}
+    </div>
+    <div class="col-sm-12">
+        @{
+            foreach (var item in Model.comment)
+            {
+                <h4>@item.content</h4>
+            }
+        }
+
+        <form method="post" action="~/comment/Addcomment">
+            <label>your comment </label><input type="text" name="comm" />
+            <input type="text" name="in" value="@Model.invoicenumber" hidden/>
+            <input type="submit" value="send" />
+        </form>
+    </div>
+</div>

@@ -34,7 +34,7 @@
             
             
             @Html.LabelFor(model => model.projectmang, htmlAttributes: new { @class = "control-label col-md-2" })
-            <select name="Project Managers">
+            <select name="user">
                 @{foreach (var item in ViewBag.users)
                     {
                         <option value="@item.name"> (@item.name)</option>

@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\billController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\CurrenciesController.cs" />
     <Compile Include="Controllers\CurrencyController.cs" />
     <Compile Include="Controllers\MyController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -149,6 +150,22 @@
     <Compile Include="Migrations\202208140759241_dgfgfd.cs" />
     <Compile Include="Migrations\202208140759241_dgfgfd.designer.cs">
       <DependentUpon>202208140759241_dgfgfd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208210205057_invoice.cs" />
+    <Compile Include="Migrations\202208210205057_invoice.designer.cs">
+      <DependentUpon>202208210205057_invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208210759201_sadsfd.cs" />
+    <Compile Include="Migrations\202208210759201_sadsfd.designer.cs">
+      <DependentUpon>202208210759201_sadsfd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208220040347_jjjfff.cs" />
+    <Compile Include="Migrations\202208220040347_jjjfff.designer.cs">
+      <DependentUpon>202208220040347_jjjfff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208220124089_kjj.cs" />
+    <Compile Include="Migrations\202208220124089_kjj.designer.cs">
+      <DependentUpon>202208220124089_kjj.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbCon.cs" />
@@ -195,8 +212,8 @@
     <Content Include="Views\User\Signup.cshtml" />
     <Content Include="Views\User\login.cshtml" />
     <Content Include="Views\bill\Addbill.cshtml" />
+    <Content Include="Views\bill\addmangertobill.cshtml" />
     <Content Include="Views\My\myinvoice.cshtml" />
-    <Content Include="Views\My\Requst.cshtml" />
     <Content Include="Views\Currency\GetAllCurrencies.cshtml" />
     <Content Include="Views\Currency\Currency.cshtml" />
     <Content Include="Views\PurchaseOrder\PurchaseOrder.cshtml" />
@@ -205,10 +222,17 @@
     <Content Include="Views\Vendor\GetAllVendors.cshtml" />
     <Content Include="Views\Project\Project.cshtml" />
     <Content Include="Views\Project\GetAllProjects.cshtml" />
+    <Content Include="Views\My\Requst.cshtml" />
+    <Content Include="Views\Currencies\Create.cshtml" />
+    <Content Include="Views\Currencies\Delete.cshtml" />
+    <Content Include="Views\Currencies\Details.cshtml" />
+    <Content Include="Views\Currencies\Edit.cshtml" />
+    <Content Include="Views\Currencies\Index.cshtml" />
+    <Content Include="Views\My\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Comment\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -232,6 +256,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208140759241_dgfgfd.resx">
       <DependentUpon>202208140759241_dgfgfd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208210205057_invoice.resx">
+      <DependentUpon>202208210205057_invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208210759201_sadsfd.resx">
+      <DependentUpon>202208210759201_sadsfd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208220040347_jjjfff.resx">
+      <DependentUpon>202208220040347_jjjfff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208220124089_kjj.resx">
+      <DependentUpon>202208220124089_kjj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

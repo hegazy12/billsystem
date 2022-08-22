@@ -18,6 +18,7 @@ namespace NewInvoice.Models
         public DbSet<doc> docs { get; set; }
         public DbSet<invoice> invoices { get; set; }
         public DbSet<approver> approvers { get; set; }
+        public DbSet<comment> comments { get; set; }
 
     }
 
@@ -81,7 +82,7 @@ namespace NewInvoice.Models
 
         public string state { get; set; }
 
-        public int creator_key { get; set; }
+        
         public virtual user creator { get; set; }
         public int delete_state { get; set; }
 
@@ -91,6 +92,7 @@ namespace NewInvoice.Models
         public virtual project projectnumber { get; set; }
         public virtual purchaseorder purchaseorder { get; set; }
         public virtual List<approver> Approver { get; set; }
+        public virtual List<comment> comment { get; set; }
 
     }
 
@@ -100,9 +102,16 @@ namespace NewInvoice.Models
         public string decision { get; set; }
 
         public virtual invoice invoice { get; set; }
-        public string invoice_key { get; set; }
+       
 
         public virtual user user { get; set; }
-        public int user_key { get; set; }
+       
     }
+    public class comment
+    {
+        public int id { get; set; }
+        public string content { get; set; }
+        public invoice invoice { get; set; }
+    }
+    
 }

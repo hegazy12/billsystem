@@ -5,21 +5,57 @@
 }
 
 <h2>Requst</h2>
-<div class="row">
-@foreach (var item in Model) {
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.invoice.creator.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.invoice.invoicenumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.invoice.value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.invoice.currency.symbol)
+        </th>
+    </tr>
+   
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.invoice.creator.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.invoice.invoicenumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.invoice.value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.invoice.currency.symbol)
+            </td>
             
-     <div class="col-sm-4">
-            <h3>invoice : @item.invoice.invoicenumber </h3>
-            <h3>invoice value : @item.invoice.value </h3>
-            <h3>Decision : @item.decision </h3>
-            <h3>currency  : @item.invoice.currency.symbol </h3>
-            
-            <a href="~/my/accept/@item.id">
+            <td>
+                <a href="~/my/accept/@item.id">
                     <input type="button" value="accept" />
-            </a>
-            <a href="~/my/reject/@item.id">
+                </a>
+                <a href="~/my/reject/@item.id">
                     <input type="button" value="reject" />
-            </a>
-     </div>
-}
-</div>
+                </a>
+            </td>
+
+            <td>
+                <a href="~/my/Details?invoicenumber=@item.invoice.invoicenumber">
+                    Details
+                </a>
+            </td>
+
+        </tr>
+    }
+

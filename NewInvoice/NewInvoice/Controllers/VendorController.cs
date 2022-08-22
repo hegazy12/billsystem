@@ -15,7 +15,6 @@ namespace NewInvoice.Controllers
         [HttpGet]
         public ActionResult Vendor()
         {
-            
             return View("Vendor");
         }
         [HttpPost]
