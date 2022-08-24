@@ -23,7 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.creator.id)
         </th>
-        <th></th>
+        <th>
+            Actions
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -41,7 +43,9 @@
             @Html.DisplayFor(modelItem => item.creator.id)
         </td>
         <td>
-          
+          <a href="~/my/Editmyinvoice?numinvoice=@item.invoicenumber">
+            <h3>Edit</h3>
+          </a>
         </td>
     </tr>
 }

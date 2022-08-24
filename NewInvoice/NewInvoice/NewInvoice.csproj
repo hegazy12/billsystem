@@ -139,33 +139,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202208131555272_sa.cs" />
-    <Compile Include="Migrations\202208131555272_sa.designer.cs">
-      <DependentUpon>202208131555272_sa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202208132253550_dfdfgf.cs" />
-    <Compile Include="Migrations\202208132253550_dfdfgf.designer.cs">
-      <DependentUpon>202208132253550_dfdfgf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202208140759241_dgfgfd.cs" />
-    <Compile Include="Migrations\202208140759241_dgfgfd.designer.cs">
-      <DependentUpon>202208140759241_dgfgfd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202208210205057_invoice.cs" />
-    <Compile Include="Migrations\202208210205057_invoice.designer.cs">
-      <DependentUpon>202208210205057_invoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202208210759201_sadsfd.cs" />
-    <Compile Include="Migrations\202208210759201_sadsfd.designer.cs">
-      <DependentUpon>202208210759201_sadsfd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202208220040347_jjjfff.cs" />
-    <Compile Include="Migrations\202208220040347_jjjfff.designer.cs">
-      <DependentUpon>202208220040347_jjjfff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202208220124089_kjj.cs" />
-    <Compile Include="Migrations\202208220124089_kjj.designer.cs">
-      <DependentUpon>202208220124089_kjj.cs</DependentUpon>
+    <Compile Include="Migrations\202208240737289_fff.cs" />
+    <Compile Include="Migrations\202208240737289_fff.designer.cs">
+      <DependentUpon>202208240737289_fff.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbCon.cs" />
@@ -229,6 +205,7 @@
     <Content Include="Views\Currencies\Edit.cshtml" />
     <Content Include="Views\Currencies\Index.cshtml" />
     <Content Include="Views\My\Details.cshtml" />
+    <Content Include="Views\My\Editmyinvoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -248,26 +225,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202208131555272_sa.resx">
-      <DependentUpon>202208131555272_sa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208132253550_dfdfgf.resx">
-      <DependentUpon>202208132253550_dfdfgf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208140759241_dgfgfd.resx">
-      <DependentUpon>202208140759241_dgfgfd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208210205057_invoice.resx">
-      <DependentUpon>202208210205057_invoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208210759201_sadsfd.resx">
-      <DependentUpon>202208210759201_sadsfd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208220040347_jjjfff.resx">
-      <DependentUpon>202208220040347_jjjfff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208220124089_kjj.resx">
-      <DependentUpon>202208220124089_kjj.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208240737289_fff.resx">
+      <DependentUpon>202208240737289_fff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

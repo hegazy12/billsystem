@@ -1,0 +1,108 @@
+﻿@model NewInvoice.Models.invoice
+
+<br />
+
+<div class="row">
+    <div class="col-sm-6">
+        <h3> (invoice number) @Model.invoicenumber</h3>
+    </div>
+
+    <div class="col-sm-6">
+        <h3> (invoice value) @Model.value || @Model.currency.symbol</h3>
+    </div>
+
+    <div class="col-sm-6">
+        <h3> (invoice description) @Model.description</h3>
+    </div>
+
+    <div class="col-sm-6">
+        <h3> (number project) @Model.projectnumber.projectnumber</h3>
+    </div>
+
+    <div class="col-sm-6">
+        <h3> (invoice project) @Model.purchaseorder.ordernumber</h3>
+    </div>
+
+
+    @{foreach (var item in Model.docs)
+        {
+            <div class="col-sm-4">
+                <object data="your_url_to_pdf" type="application/pdf">
+                    <iframe src="@Url.Action("OpenPDF" , new {id = item.id})" width="300">
+                    </iframe>
+                </object>
+                <a href="~/my/deletedoc/@item.id">
+                    <h4>delete</h4>
+                </a>
+            </div>
+        }
+    }
+
+
+    <div class="col-sm-4">
+        @{foreach (var i in Model.Approver)
+            {
+                <h4> @i.user.name <a href="~/my/deleteapprover/@i.id"> (delete) </a> </h4>
+            }
+        }
+    </div>
+</div>
+    <form method="post">
+        <label>Invoicenumber</label>  <input type="text" name="invoicenumber" value="@Model.invoicenumber" hidden />
+        <br />
+        <label>Value</label>          <input type="number" name="value" value="@Model.value" />
+        <br />
+        <label>Description</label>    <input type="text" name="Description" value="@Model.description" />
+        <br />
+        <label>Currency</label>
+        <select name="currencies">
+            @{foreach (var item in ViewBag.currencies)
+                {
+                    <option value="@item.symbol">@item.symbol (@item.name)</option>
+                }
+            }
+        </select>
+        <br />
+        <label>Vendor</label>
+        <select name="Vendors">
+            @{foreach (var item in ViewBag.vendors)
+                {
+                    <option value="@item.vendornumber"> (@item.name)</option>
+                }
+            }
+        </select>
+
+        <br />
+        <label>Purchase Order</label>
+        <select name="purchaseorders">
+            @{foreach (var item in ViewBag.purchaseorders)
+                {
+                    <option value="@item.ordernumber"> (@item.ordernumber)</option>
+                }
+            }
+        </select>
+        <br />
+        <br />
+        <label>Projects</label>
+        <select name="projects">
+            @{foreach (var item in ViewBag.projects)
+                {
+                    <option value="@item.projectnumber"> (@item.projectnumber)</option>
+                }
+            }
+        </select>
+        <br />
+        <label>document</label><input type="file" name="files" multiple />
+        <br />
+        <label>managers</label>
+        <select name="mangers" multiple="true">
+            @{foreach (var item in ViewBag.manger)
+                {
+                    <option value="@item.id"> (@item.name) </option>
+                }
+            }
+        </select>
+        <br />
+        <input type="submit" value="send" />
+    </form>
+    

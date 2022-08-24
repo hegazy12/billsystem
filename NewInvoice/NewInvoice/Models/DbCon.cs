@@ -10,16 +10,39 @@ namespace NewInvoice.Models
 
     public class DbCon : DbContext
     {
-        public DbSet<user> users { get; set; }
-        public DbSet<currencies> currencies { get; set; }
-        public DbSet<vendor> vendors { get; set; }
-        public DbSet<project> projects { get; set; }
-        public DbSet<purchaseorder> purchaseorders { get; set; }
-        public DbSet<doc> docs { get; set; }
-        public DbSet<invoice> invoices { get; set; }
-        public DbSet<approver> approvers { get; set; }
-        public DbSet<comment> comments { get; set; }
+        public DbSet<user> users {get; set;}
+        public DbSet<currencies> currencies {get; set;}
+        public DbSet<vendor> vendors {get; set;}
+        public DbSet<project> projects {get; set;}
+        public DbSet<purchaseorder> purchaseorders {get; set;}
+        public DbSet<doc> docs {get; set;}
+        public DbSet<invoice> invoices {get; set;}
+        public DbSet<approver> approvers {get; set;}
+        public DbSet<comment> comments {get; set;}
 
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+           // modelBuilder.Entity<approver>()
+           // .HasOptional(a => a.invoice)
+           // .WithOptionalDependent()
+           // .WillCascadeOnDelete(true);
+
+           // modelBuilder.Entity<approver>()
+           //.HasOptional(a => a.user)
+           //.WithOptionalDependent()
+           //.WillCascadeOnDelete(true);
+
+           // modelBuilder.Entity<invoice>()
+           // .HasOptional(a => a.currency)
+           // .WithOptionalDependent()
+           // .WillCascadeOnDelete(true);
+
+           // modelBuilder.Entity<doc>()
+           //.HasOptional(a => a.invoice)
+           //.WithOptionalDependent()
+           //.WillCascadeOnDelete(true);
+        }
     }
 
     public class user
@@ -38,10 +61,11 @@ namespace NewInvoice.Models
         public string name { get; set; }
         public virtual List<invoice> invoices { get; set; }
     }
+
     public class vendor
     {
         [Key]
-        public int vendornumber { get; set; }
+        public int vendornumber {get; set;}
         public string name { get; set; }
         public virtual List<invoice> invoices { get; set; }
     }
@@ -49,10 +73,9 @@ namespace NewInvoice.Models
     public class project
     {
         [Key]
-        public string projectnumber { get; set; }
-        public string projectname { get; set; }
-        public virtual user projectmang { get; set; }
-
+        public string projectnumber {get; set;}
+        public string projectname {get; set;}
+        public virtual user projectmang {get; set;}
     }
 
     public class purchaseorder
@@ -65,53 +88,40 @@ namespace NewInvoice.Models
 
     public class doc
     {
-        public int id { get; set; }
-        public string path { get; set; }
-        public virtual invoice invoice { get; set; }
+        public int id {get; set;}
+        public string path {get; set;}
+        public virtual invoice invoice {get; set;}
     }
-
-
 
     public class invoice
     {
         [Key]
-        public string invoicenumber { get; set; }
-        public float value { get; set; }
-
-        public string description { get; set; }
-
-        public string state { get; set; }
-
-        
-        public virtual user creator { get; set; }
-        public int delete_state { get; set; }
-
-        public virtual List<doc> docs { get; set; }
-        public virtual currencies currency { get; set; }
-        public virtual vendor vendor { get; set; }
-        public virtual project projectnumber { get; set; }
-        public virtual purchaseorder purchaseorder { get; set; }
-        public virtual List<approver> Approver { get; set; }
-        public virtual List<comment> comment { get; set; }
-
+        public string invoicenumber {get; set;}
+        public float value {get; set;}
+        public string description {get; set;}
+        public string state {get; set;}
+        public virtual user creator {get; set;}
+        public int delete_state {get; set;}
+        public virtual List<doc> docs {get; set; }
+        public virtual currencies currency {get; set;}
+        public virtual vendor vendor {get; set;}
+        public virtual project projectnumber {get; set;}
+        public virtual purchaseorder purchaseorder {get; set;}
+        public virtual List<approver> Approver {get; set;}
+        public virtual List<comment> comment {get; set;}
     }
 
     public class approver
     {
-        public int id { get; set; }
-        public string decision { get; set; }
-
-        public virtual invoice invoice { get; set; }
-       
-
-        public virtual user user { get; set; }
-       
+        public int id {get; set;}
+        public string decision {get; set;}
+        public virtual invoice invoice {get; set;}
+        public virtual user user {get; set;}
     }
     public class comment
     {
         public int id { get; set; }
         public string content { get; set; }
-        public invoice invoice { get; set; }
+        public virtual invoice invoice { get; set; }
     }
-    
 }
